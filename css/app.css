@@ -124,7 +124,7 @@ b { font-weight: 700; }
 }
 
 .bio {
-    font-size: 22px; font-weight: 300;
+    font-size: 22px; font-weight: 300; text-align: center;
 }
 
 .bio:after {
