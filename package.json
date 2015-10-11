@@ -14,11 +14,12 @@
   },
   "homepage": "https://github.com/siebevd/siebevd.github.io",
   "devDependencies": {
-    "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
-    "gulp-watch": "^4.3.5",
     "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0"
   }
 }
