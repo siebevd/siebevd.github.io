@@ -54,12 +54,6 @@ table {
 /* Animations
 -----------------------*/
 
-@-webkit-keyframes blinking {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    51% { opacity: 1; }
-    100% {opacity: 1;}
-}
 
 @keyframes blinking {
     0% { opacity: 0; }
@@ -102,7 +96,7 @@ b { font-weight: 700; }
 
 .content {
     position: absolute; top: 50%; left: 50%;
-    transform: translate3d(-50%, -50%, -50%); -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, -50%);
     z-index: 10;
 }
 
@@ -156,7 +150,7 @@ b { font-weight: 700; }
     text-indent: -9999px;
     background-size: contain; background-repeat: no-repeat; background-position: center;
     opacity: .6;
-    transition: opacity 300ms; -webkit-transition: opacity 300ms;
+    transition: opacity 300ms;
 }
 .social-item-link:hover { opacity: 1; }
 
