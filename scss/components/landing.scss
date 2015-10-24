@@ -4,12 +4,19 @@
  *
  */
 
+.bg-container {
+    width: 100%; height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 500px;
+}
 
 .bg {
     width: 1200px; height: 744px;
-    position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;
+    position: absolute; right: 0px; bottom: 0px; left: 0px;
     margin: auto;
-    background: #000; background-size: cover; background-position: center;
+    transform-origin:center bottom;
+    background: $color-bg; background-size: cover; background-position: center;
 }
 
 .bg-layer-1 {
@@ -118,3 +125,36 @@ b { font-weight: 700; }
 .social-item-link--github { background-image: url('../img/github.png'); }
 .social-item-link--twitter { background-image: url('../img/twitter.png'); }
 .social-item-link--mail { background-image: url('../img/mail.png'); }
+
+
+/* Discover More
+-----------------------*/
+
+.landing-discover {
+    width: 100%;
+    position: absolute; bottom: 35px;
+    color: #fff; font-family: $fontFamily-serif; font-size: 14px; text-align: center; line-height: .9;
+    opacity: .7;
+}
+
+.landing-arrow {
+    width: 10px; height: 1px;
+    position: relative;
+    background: #fff;
+    display: inline-block;
+//    animation: downward 2s infinite;
+
+    &:before,
+    &:after {
+        content: '';
+        width: 6px; height: 1px;
+        position: absolute; top: 2px; left: 0px;
+        background: #fff;
+        transform: rotate(40deg);
+    }
+
+    &:after {
+        left: initial; right: 0px;
+        transform: rotate(-40deg);
+    }
+}
