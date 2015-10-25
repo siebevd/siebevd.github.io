@@ -9,7 +9,13 @@ var ticking = false,
 getScreenCenter();
 calculateBg();
 
-document.addEventListener('scroll', MoveHandler);
+
+// Only on mobile
+if (window.innerWidth > 760){
+    document.addEventListener('scroll', MoveHandler);
+    window.addEventListener('resize', calculateBg);
+
+}
 
 function calculateBg() {
     var w = window.innerWidth + 100,
@@ -22,7 +28,6 @@ function calculateBg() {
             newScale = 1;
         }
 
-        console.log(scaleW, scaleH);
 
         document.querySelector('.bg').style.transform = 'scale('+ newScale  + ')';
 
@@ -37,9 +42,7 @@ function getScreenCenter() {
 }
 
 function MoveHandler(e) {
-    console.log(e);
     scrollPosition = window.scrollY;
-    console.log(scrollPosition);e
     //lastMousePosition.y = e.clientY;
     requestTick();
 }
@@ -54,19 +57,10 @@ function requestTick() {
 function updateMovement() {
     ticking = false;
 
-    // var baseMovement = {x: center.x - lastMousePosition.x, y: center.y - lastMousePosition.y };
-    //
     for (var i = 0; i < moveElsLength; i++) {
         var depth = moveEls[i].getAttribute('data-depth');
         moveEls[i].style.transform = "translate3d(0px, " + - scrollPosition/depth + "px, 0)";
     }
 
-
-    // Calculate base movement
-}
-
-setInterval(updateActive,1000);
-
-function updateActive() {
 
 }

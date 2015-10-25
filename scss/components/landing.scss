@@ -157,3 +157,25 @@ b { font-weight: 700; }
         transform: rotate(-40deg);
     }
 }
+
+
+
+
+/* Responsive
+-----------------------*/
+
+@media screen and (max-width: 750px) {
+
+    .bg {
+        background: url('../img/bg.jpg') center; background-size: cover;
+    }
+
+    .bg-layer-1,
+    .bg-layer-2,
+    .bg-layer-3,
+    .bg-layer-4, {
+        display: none;
+        background-image: initial;
+    }
+
+}
