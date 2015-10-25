@@ -63,7 +63,7 @@
     transition: all 500ms cubic-bezier(.54,0,.46,1);
 
     &:after {
-        content:'';
+        content:'view project';
         opacity: 0;
         transform: translateY(-10px);
         transition: all 500ms;
@@ -76,7 +76,6 @@
         width: 120px;
         margin-bottom: 56px;
         &:after {
-            content: 'view project';
             opacity: 1;
             transform: translateY(10px);
         }
