@@ -5,7 +5,15 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     webserver = require('gulp-webserver'),
     prefixer = require('gulp-autoprefixer'),
-    minifyCSS = require('gulp-minify-css');
+    minifyCSS = require('gulp-minify-css')
+    source = require('vinyl-source-stream'), // Transforming browserify so we can use it with gulp
+    browserify = require('browserify'),
+    watchify = require('watchify'),
+    buffer = require('vinyl-buffer'),
+    uglify = require('gulp-uglify'),
+    assign = require('lodash.assign'),
+    gutil = require('gulp-util');
+
 
 
 /* Basic setup
@@ -20,6 +28,39 @@ gulp.task('webserver', function() {
 });
 
 
+
+/* Javascript
+----------------------------*/
+
+var browserifyOpts = {
+  entries: './js/app.js',
+  debug:true
+};
+
+var opts = assign({}, watchify.args, browserifyOpts);
+var watchJs = watchify(browserify(opts));
+
+gulp.task('browserify',brwsrfy);
+watchJs.on('update', brwsrfy); // Watch for updates happening on any of the required files
+watchJs.on('log', gutil.log); // output build logs to terminal
+
+
+function brwsrfy() {
+  return watchJs.bundle()
+    .on("error", notify.onError(function (error) {
+      return "ERROR: " + error.message;
+      this.emit('end');
+    }))
+    .pipe(source('app.js')) // Give the new compiled file a name, app.js in this case
+    .pipe(buffer()) // Transform to a stream we can use in gulp
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./js'));
+}
+
+
+/* Css
+----------------------------*/
 
 gulp.task('styles', function(){
     gulp.src('scss/style.scss')
@@ -37,7 +78,7 @@ gulp.task('styles', function(){
 /* Commands
 ----------------------------*/
 
-gulp.task('default', ['webserver','styles','watch']);
+gulp.task('default', ['webserver','styles','watch','browserify']);
 
 
 /* Watch
