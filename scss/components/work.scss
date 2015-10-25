@@ -108,7 +108,7 @@
 .screencloud-img {
     width: 556px; height: 428px;
     position: absolute; right: -10px; bottom: 0;
-    background: url('../img/projects/screencloud.png');
+    background: url('../img/projects/screencloud.png') no-repeat right bottom; background-size: contain;
     transition: all 600ms cubic-bezier(.4,.01,.59,.99);
 }
 
@@ -148,7 +148,7 @@
 .timeout-img {
     position: absolute; left: 20px; bottom: -140px; // do -120 because of padding on parent
     width: 308px; height: 421px;
-    background: url('../img/projects/timeout.jpg');
+    background: url('../img/projects/timeout.jpg') no-repeat right bottom; background-size: contain;
     transition: all 500ms cubic-bezier(.54,0,.46,1);
 }
 
@@ -289,6 +289,18 @@
 
 /* Responsive
 -----------------------*/
+
+@media screen  and (min-width: 750px) and (max-width: 1000px) {
+
+    .screencloud-img {
+        width: 400px; height: 308px;
+    }
+
+    .timeout-img {
+        width: 250px;
+    }
+
+}
 
 @media screen and (max-width: 750px) {
 
