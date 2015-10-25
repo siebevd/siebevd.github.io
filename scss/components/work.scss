@@ -10,7 +10,7 @@
 
 .work-title {
     position: relative;
-    text-transform: uppercase; font-size: 25px; text-align: center; letter-spacing: 1px;
+    text-transform: uppercase; font-size: 23px; text-align: center; letter-spacing: 1px; font-weight: 700;
     margin: 40px 0px 80px;
     &:after {
         content: '';
@@ -51,16 +51,37 @@
     position: relative;
     font-size: 60px; font-weight: 700;
     padding-bottom: 80px;
+}
+
+.work-item-link {
+    width: 100px ; height: 6px;
+    position: absolute; top: 80px; left: 0px;
+    color: #fff; text-decoration: none; font-weight: 700;
+    background-color: #fff;
+    display: block;
+    margin-top: 30px;
+    transition: all 500ms cubic-bezier(.54,0,.46,1);
+
     &:after {
-        content: '';
-        width: 100px ; height: 6px;
-        color: #fff;
-        background-color: #fff;
+        content:'';
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 500ms;
         display: block;
-        margin-top: 30px;
     }
 }
 
+.work-item-content:hover {
+    .work-item-link {
+        width: 120px;
+        margin-bottom: 56px;
+        &:after {
+            content: 'view project';
+            opacity: 1;
+            transform: translateY(10px);
+        }
+    }
+}
 
 .work-item-smallTitle {
     font-weight: 300;
@@ -76,10 +97,19 @@
 
 /* Screencloud
 -----------------------*/
+
+.work-item-content--screencloud:hover + .screencloud-img {
+    transform: translateX(-10px);
+
+}
+
+
+
 .screencloud-img {
     width: 556px; height: 428px;
-    position: absolute; right: 0; bottom: 0;
+    position: absolute; right: -10px; bottom: 0;
     background: url('../img/projects/screencloud.png');
+    transition: all 600ms cubic-bezier(.4,.01,.59,.99);
 }
 
 /* Timeout
@@ -88,7 +118,6 @@
 .work-item--timeout {
     background: #fff;
     text-align: right;
-
     .work-item-nr {
         top: 10px; left: initial; right: 400px;
         color: $color-bg;
@@ -99,10 +128,14 @@
 
     .work-item-title {
         color: $color-bg; text-transform: uppercase; text-align: right;
-        &:after {
-            position: absolute; right: 0px;
-            background: #84bd16;
-        }
+
+    }
+
+    .work-item-link {
+        left: initial; top: 130px; right: 0px;
+        color: #84bd16;
+        background: #84bd16;
+
     }
 
     .work-item-description {
@@ -111,8 +144,142 @@
     }
 }
 
+
 .timeout-img {
     position: absolute; left: 20px; bottom: -140px; // do -120 because of padding on parent
     width: 308px; height: 421px;
     background: url('../img/projects/timeout.jpg');
+    transition: all 500ms cubic-bezier(.54,0,.46,1);
 }
+
+.work-item-border {
+    width: 110%; height: 1px;
+    position: absolute; bottom: -120px;
+    background: #e7e7e7;
+    margin-left: -5%;
+}
+
+.work-item-content--timeout:hover {
+    .timeout-img {
+         transform: translateY(-10px);
+    }
+}
+
+/* Old
+-----------------------*/
+
+.oldWork {
+    background: #fff;
+}
+
+.oldWork-title {
+    position: relative;
+    text-transform: uppercase; font-size: 23px; text-align: center; letter-spacing: 1px; font-weight: 700;
+    padding: 40px 0px 80px;
+    color: $color-bg;
+    &:after {
+        content: '';
+        position: absolute; top: 75px; left: 50%;
+        margin-left: -25px;
+        width: 50px; height: 1px;
+        background: $color-bg;
+        display: block;
+        opacity: .3;
+    }
+}
+
+.oldWork-content {
+    width: 800px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.oldWork-item {
+    width: 50%; height: 310px;
+    background:#000; background-size: cover; background-position: center;
+    float: left;
+
+    &:hover {
+        .oldWork-item-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+.oldWork-item--patton {
+    background-image: url('../img/projects/paton.jpg');
+}
+
+.oldWork-item--butcher {
+    background-image: url('../img/projects/butcher.jpg');
+}
+
+.oldWork-item--itv {
+    background-image: url('../img/projects/itv.jpg');
+}
+
+.oldWork-item--ahoy {
+    background-image: url('../img/projects/ahoy.jpg');
+}
+
+.oldWork-item-content {
+    width: calc(100% - 40px); height: calc(100% - 40px);
+    position: relative;
+    margin: 20px;
+    background: #fff;
+    padding: 30px 30px 20px;
+    box-sizing: border-box;
+    color: $color-bg;
+    opacity: 0;
+    transform: scale(.9);
+    transition: all 400ms cubic-bezier(.54,0,.46,1);
+}
+
+.oldWork-item-title {
+    font-size: 35px; font-weight: 700;
+}
+
+.oldWork-item-description {
+    padding-bottom: 3px;
+    font-family: $fontFamily-serif; font-size: 15px;
+    opacity: .6;
+}
+
+
+.oldWork-item-linkContainer {
+    margin-top: 120px;
+}
+.oldWork-item-link {
+    width: 100px;
+    position: relative;
+    color: $color-bg; text-decoration: none; font-weight: 700;
+    margin-left: 10px;
+    display: inline-block;
+    transition: all 400ms;
+    text-align: center;
+    &:hover {
+        color: #fff;
+
+        &:after {
+            height: 40px;
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute; bottom: -12px; left: -10px;
+        width: 120px; height: 3px;
+        background: $color-bg;
+        z-index: -1;
+        display: block;
+        transition: all 250ms;
+    }
+
+    &:not(:first-child){
+        margin-left: 30px;
+    }
+}
+
+
+.oldWork-item-link--noSpacing { margin-top: 30px; }
