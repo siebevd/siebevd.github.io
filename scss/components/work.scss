@@ -155,11 +155,7 @@
     margin-left: -5%;
 }
 
-.work-item__content--timeout:hover {
-    .timeout-img {
-         transform: translateY(-10px);
-    }
-}
+.work-item__content--timeout:hover .work-item__img--timeout { transform: translateY(-10px); }
 
 
 /* Old
