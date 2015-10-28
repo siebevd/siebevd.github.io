@@ -4,13 +4,13 @@
  *
  */
 
-.bg-container {
+.landing {
     width: 100%; height: 100%;
     position: relative;
     overflow: hidden;
 }
 
-.bg {
+.landing__bg {
     width: 1200px; height: 744px;
     position: absolute; right: 0px; bottom: 0px; left: 0px;
     margin: auto;
@@ -18,25 +18,25 @@
     background: $color-bg; background-size: cover; background-position: center;
 }
 
-.bg-layer-1 {
+.landing__bg__layer--1 {
     width: 1200px; height: 303px;
     position: absolute; top: 0px; left: 0px;
     background: url('../img/bg/layer-1.png');
 }
 
-.bg-layer-2 {
+.landing__bg__layer--2 {
     width: 835px; height: 484px;
     position: absolute; top: 110px; left: 0px;
     background: url('../img/bg/layer-2.png');
 }
 
-.bg-layer-3 {
+.landing__bg__layer--3 {
     width: 1200px; height: 556px;
     position: absolute; top: 110px; left: 0px;
     background: url('../img/bg/layer-3.png');
 }
 
-.bg-layer-4 {
+.landing__bg__layer--4 {
     width: 1200px; height: 358px;
     position: absolute; bottom: 0px; left: 0px;
     background: url('../img/bg/layer-4.png');
@@ -44,7 +44,7 @@
 
 
 
-.border {
+.landing__border {
     position: absolute; top: 20px; right: 20px; bottom: 20px; left: 20px;
     margin: auto;
     pointer-events: none;
@@ -60,56 +60,56 @@ b { font-weight: 700; }
 /* Content
 -----------------------*/
 
-.content {
+.landing__content {
     position: absolute; top: 50%; left: 50%;
     transform: translate3d(-50%, -50%, 0);
     z-index: 10;
 }
 
-.logo {
+.landing__logo {
     width: 40px; height: 91px;
     background: url('../img/logo.png'); background-size: contain; background-position: center; background-repeat: no-repeat;
     opacity: .7;
     margin: 0 auto;
 }
 
-.title {
+.landing__title {
     margin-top: 30px;
     font-size: 37px; font-weight: 700; text-transform: uppercase; text-align: center;
 }
 
-.title-small {
+.landing__title__small {
     display: block;
     font-size: 20px;  font-weight: 300;
 }
 
-.divider {
+.landing__divider {
     width: 55px; height: 3px;
     background: #fff;
     margin: 20px auto;
 }
 
-.bio {
+.landing__bio {
     font-size: 22px; font-weight: 300; text-align: center;
 }
 
-.bio:after {
+.landing__bio:after {
     content: '_';
     animation: blinking 900ms infinite;
 }
 
-.social {
+.landing__social {
     width: 80%;
     margin: 30px auto 0;
 }
 
-.social-item {
+.landing__social__item {
     width: 25%;
     list-style: none;
     display: inline-block;
 }
 
-.social-item-link {
+.landing__social__item__link {
     width: 25px; height: 25px;
     display: block;
     margin: 0 auto;
@@ -117,31 +117,31 @@ b { font-weight: 700; }
     background-size: contain; background-repeat: no-repeat; background-position: center;
     opacity: .6;
     transition: opacity 300ms;
+    &:hover { opacity: 1; }
 }
-.social-item-link:hover { opacity: 1; }
 
-.social-item-link--dribbble { background-image: url('../img/dribbble.png'); }
-.social-item-link--github { background-image: url('../img/github.png'); }
-.social-item-link--twitter { background-image: url('../img/twitter.png'); }
-.social-item-link--mail { background-image: url('../img/mail.png'); }
+.landing__social__item__link--dribbble { background-image: url('../img/dribbble.png'); }
+.landing__social__item__link--github { background-image: url('../img/github.png'); }
+.landing__social__item__link--twitter { background-image: url('../img/twitter.png'); }
+.landing__social__item__link--mail { background-image: url('../img/mail.png'); }
 
 
 /* Discover More
 -----------------------*/
 
-.landing-discover {
+.landing__discover{
     width: 100%;
     position: absolute; bottom: 35px;
     color: #fff; font-family: $fontFamily-serif; font-size: 14px; text-align: center; line-height: .9;
     opacity: .7;
 }
 
-.landing-arrow {
+.landing__discover__arrow {
     width: 10px; height: 1px;
     position: relative;
     background: #fff;
     display: inline-block;
-//    animation: downward 2s infinite;
+    //animation: downward 2s infinite;
 
     &:before,
     &:after {
@@ -159,21 +159,19 @@ b { font-weight: 700; }
 }
 
 
-
-
 /* Responsive
 -----------------------*/
 
 @media screen and (max-width: 750px) {
 
-    .bg {
+    .landing__bg {
         background: url('../img/bg.jpg') center; background-size: cover;
     }
 
-    .bg-layer-1,
-    .bg-layer-2,
-    .bg-layer-3,
-    .bg-layer-4, {
+    .landing__bg__layer--1,
+    .landing__bg__layer--2,
+    .landing__bg__layer--3,
+    .landing__bg__layer--4, {
         display: none;
         background-image: initial;
     }

@@ -1,14 +1,14 @@
 /*
-*
-* Work Panels
-*
-*/
+ *
+ * Work Panels
+ *
+ */
 
 
 /* Base
 -----------------------*/
 
-.work-title {
+.work__title {
     position: relative;
     text-transform: uppercase; font-size: 23px; text-align: center; letter-spacing: 1px; font-weight: 700;
     margin: 40px 0px 80px;
@@ -23,7 +23,6 @@
 }
 
 
-
 /* Item
 -----------------------*/
 .work-item {
@@ -32,28 +31,28 @@
     overflow: hidden;
 }
 
-.work-item-content {
+.work-item__content {
     position: relative;
 }
 
-.work-item-nr {
+.work-item__nr {
     position: absolute; top:-40px; left: 370px;
     font-size: 110px; font-weight: 700;
     opacity: .05;
 }
 
-.work-item-subTitle {
+.work-item__sub-title {
     font-family: $fontFamily-serif; color: $color-grey; font-size: 17px;
     margin-bottom: 2px;
 }
 
-.work-item-title {
+.work-item__title {
     position: relative;
     font-size: 60px; font-weight: 700;
     padding-bottom: 80px;
 }
 
-.work-item-link {
+.work-item__link {
     width: 100px ; height: 6px;
     position: absolute; top: 80px; left: 0px;
     color: #fff; text-decoration: none; font-weight: 700;
@@ -69,10 +68,11 @@
         transition: all 500ms;
         display: block;
     }
+
 }
 
-.work-item-content:hover {
-    .work-item-link {
+.work-item__content:hover {
+    .work-item__link {
         width: 120px;
         margin-bottom: 56px;
         &:after {
@@ -82,12 +82,12 @@
     }
 }
 
-.work-item-smallTitle {
+.work-item__small-title {
     font-weight: 300;
     display: block;
 }
 
-.work-item-description {
+.work-item__description {
     position: absolute; top: 85px; left: 320px;
     color: $color-grey; font-family: $fontFamily-serif; line-height: 1.2;
 }
@@ -97,14 +97,11 @@
 /* Screencloud
 -----------------------*/
 
-.work-item-content--screencloud:hover + .screencloud-img {
-    transform: translateX(-10px);
-
-}
+.work-item__content--screencloud:hover + .work-item__img--screencloud { transform: translateX(-10px); }
 
 
 
-.screencloud-img {
+.work-item__img--screencloud {
     width: 556px; height: 428px;
     position: absolute; right: -10px; bottom: 0;
     background: url('../img/projects/screencloud.png') no-repeat right bottom; background-size: contain;
@@ -117,65 +114,65 @@
 .work-item--timeout {
     background: #fff;
     text-align: right;
-    .work-item-nr {
+    .work-item__nr {
         top: 10px; left: initial; right: 400px;
         color: $color-bg;
         opacity: .07;
     }
 
-    .work-item-subTitle { opacity: .5; }
+    .work-item__sub-title { opacity: .5; }
 
-    .work-item-title {
+    .work-item__title {
         color: $color-bg; text-transform: uppercase; text-align: right;
 
     }
 
-    .work-item-link {
+    .work-item__link {
         left: initial; top: 130px; right: 0px;
         color: #84bd16;
         background: #84bd16;
 
     }
 
-    .work-item-description {
+    .work-item__description {
         top: 150px; left: initial; right: 390px;
         opacity: .5;
     }
 }
 
 
-.timeout-img {
+.work-item__img--timeout {
     position: absolute; left: 20px; bottom: -140px; // do -120 because of padding on parent
     width: 308px; height: 421px;
     background: url('../img/projects/timeout.jpg') no-repeat right bottom; background-size: contain;
     transition: all 500ms cubic-bezier(.54,0,.46,1);
 }
 
-.work-item-border {
+.work-item__border {
     width: 110%; height: 1px;
     position: absolute; bottom: -120px;
     background: #e7e7e7;
     margin-left: -5%;
 }
 
-.work-item-content--timeout:hover {
+.work-item__content--timeout:hover {
     .timeout-img {
          transform: translateY(-10px);
     }
 }
 
+
 /* Old
 -----------------------*/
 
-.oldWork {
-    background: #fff;
-}
+.old-work { background: #fff; }
 
-.oldWork-title {
+.old-work__title {
     position: relative;
     text-transform: uppercase; font-size: 23px; text-align: center; letter-spacing: 1px; font-weight: 700;
     padding: 40px 0px 80px;
     color: $color-bg;
+
     &:after {
         content: '';
         position: absolute; top: 75px; left: 50%;
@@ -187,42 +184,31 @@
     }
 }
 
-.oldWork-content {
+.old-work__content {
     width: 90%; max-width: 800px;
     margin: 0 auto;
     padding-bottom: 50px;
 }
 
-.oldWork-item {
+.old-work__item {
     width: 50%; height: 310px;
     background:#000; background-size: cover; background-position: center;
     float: left;
 
     &:hover {
-        .oldWork-item-content {
+        .old-work__item__content {
             opacity: 1;
             transform: scale(1);
         }
     }
 }
 
-.oldWork-item--patton {
-    background-image: url('../img/projects/paton.jpg');
-}
+.old-work__item--patton  { background-image: url('../img/projects/paton.jpg'); }
+.old-work__item--butcher { background-image: url('../img/projects/butcher.jpg'); }
+.old-work__item--itv     { background-image: url('../img/projects/itv.jpg'); }
+.old-work__item--ahoy    { background-image: url('../img/projects/ahoy.jpg'); }
 
-.oldWork-item--butcher {
-    background-image: url('../img/projects/butcher.jpg');
-}
-
-.oldWork-item--itv {
-    background-image: url('../img/projects/itv.jpg');
-}
-
-.oldWork-item--ahoy {
-    background-image: url('../img/projects/ahoy.jpg');
-}
-
-.oldWork-item-content {
+.old-work__item__content {
     width: calc(100% - 40px); height: calc(100% - 40px);
     position: relative;
     margin: 20px;
@@ -235,21 +221,17 @@
     transition: all 400ms cubic-bezier(.54,0,.46,1);
 }
 
-.oldWork-item-title {
-    font-size: 35px; font-weight: 700;
-}
+.old-work__item__title { font-size: 35px; font-weight: 700; }
 
-.oldWork-item-description {
+.old-work__item__description {
     padding-bottom: 3px;
     font-family: $fontFamily-serif; font-size: 15px;
     opacity: .6;
 }
 
+.old-work__item__link-container { margin-top: 120px; }
 
-.oldWork-item-linkContainer {
-    margin-top: 120px;
-}
-.oldWork-item-link {
+.old-work__item__link {
     width: 100px;
     position: relative;
     color: $color-bg; text-decoration: none; font-weight: 700;
@@ -257,6 +239,7 @@
     display: inline-block;
     transition: all 400ms;
     text-align: center;
+
     &:hover {
         color: #fff;
 
@@ -280,10 +263,7 @@
     }
 }
 
-
-.oldWork-item-link--noSpacing { margin-top: 30px; }
-
-
+.old-work__item__link--noSpacing { margin-top: 30px; }
 
 
 /* Responsive
@@ -291,30 +271,26 @@
 
 @media screen  and (min-width: 750px) and (max-width: 1000px) {
 
-    .screencloud-img {
-        width: 400px; height: 308px;
-    }
-
-    .timeout-img {
-        width: 250px;
-    }
+    .work-item__img--screencloud { width: 400px; height: 308px; }
+    .work-item__img--timeout     { width: 250px; }
 
 }
 
+
 @media screen and (max-width: 750px) {
 
-    .work-title { margin-bottom: 40px; }
+    .work__title { margin-bottom: 40px; }
 
     .work-item { padding: 50px 0px 70px; }
 
-    .work-item-content { text-align: center; }
+    .work-item__content { text-align: center; }
 
-    .work-item-title {
+    .work-item__title {
         font-size: 30px;
         padding-bottom: 0px;
     }
 
-    .work-item-description {
+    .work-item__description {
         width: 80%;
         position: relative; top: initial !important; left: initial !important; right: initial !important;
         padding-top: 20px;
@@ -322,7 +298,7 @@
         br { display: none; }
     }
 
-    .work-item-link {
+    .work-item__link {
         position: relative; top: initial !important; left: initial;
         display: inline-block;
         margin-top: 20px;
@@ -333,15 +309,14 @@
         }
     }
 
-    .work-item-border { bottom: -60px; }
+    .work-item__border { bottom: -60px; }
 
     .work-item--timeout {
-        .work-item-title { text-align: center; }
+        .work-item__title { text-align: center; }
     }
 
 
-    .screencloud-img,
-    .timeout-img {
+    .work-item__img {
         display: none;
         background-image: initial;
     }
@@ -349,24 +324,24 @@
 
     // Old work
 
-    .oldWork-title { padding-bottom: 40px; }
+    .old-work__title { padding-bottom: 40px; }
 
-    .oldWork-item {
+    .old-work__item {
         width: 100%; height: auto;
         background: initial;
         padding-bottom: 20px;
     }
 
-    .oldWork-item-content {
+    .old-work__item__content {
         opacity: 1;
         width: 100%; height: 100%;
         margin: 0;
         transform: scale(1);
     }
 
-    .oldWork-item-linkContainer { margin-top: 30px; }
+    .old-work__item__link-container { margin-top: 30px; }
 
-    .oldWork-item-link:not(:first-child) {
+    .old-work__item__link:not(:first-child) {
         margin-top: 30px; margin-left: 10px;
         display: block;
     }
